@@ -1,0 +1,53 @@
+.MenuPages{
+
+}
+
+.MenuPages-container{
+    text-align: center;
+    color: gray;
+    font-family: 'EB Garamond', serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    margin-top: 50px;
+    font-size: 1.2em;
+}
+
+.MenuPages-container h1{
+    color: gray;
+}
+
+.MenuPages-title{
+    font-size: 56px;
+}
+
+.MenuPages-column-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.MenuPages-column{
+    flex: 1;
+    max-width: 12vw;
+}
+
+.MenuPages-arrangement-column-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.MenuPages-arrangement-column{
+    flex: 1;
+    max-width: 25vw;
+    min-width: max-content;
+}
+
+.MenuPages-arrangement-image{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.MenuPages-arrangements-title{
+    margin-bottom: 50px !important;
+}

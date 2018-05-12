@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.Home {
+
+}
+
+/** {*/
+    /*overflow-x: hidden;*/
+/*}*/
+
+.hero-image {
+    width: 100%;
+    height: calc(100vh - 75px);
+    /* Position and center the image to scale nicely on all screens */
+    background: url(HomeImages/realbg.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.arrow-down {
+    color: #ffffff;
+    width: 80px;
+    position: absolute;
+    top: 75%;
+    left: calc(50% - 40px);
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text-p {
+    font-size: 45px;
+    top: 60%;
+    font-family: 'Pacifico', cursive;
+}
+
+.darken-overlay div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.13);
+}

@@ -1,0 +1,167 @@
+.BottomBar {
+    padding: 0;
+    margin: 0;
+    background-color: #FFFBE9;
+    display: grid;
+    border: none;
+    width: 100%;
+    height: 200px;
+    grid-gap: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 40px;
+    grid-template-areas: "top-left    top-right" "bottom-left bottom-right" "copy-right  copy-right";
+}
+
+.socialMediaIcons {
+    font-size: 38px;
+    color: darkblue;
+    margin-left: 90px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.copyRight {
+    grid-area: copy-right;
+    background-color: #fffed4;
+    text-align: center;
+    color: #ff0c09;
+    display: flex; /* establish flex container */
+    flex-direction: column; /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center; /* center items horizontally, in this case */
+}
+
+.bottomRow-leftSide {
+    grid-area: bottom-left;
+    justify-self: left;
+    align-self: center;
+}
+
+.bottomRow-rightSide {
+    grid-area: bottom-right;
+    align-self: center;
+    justify-self: right;
+}
+
+.BottomBar input {
+    width: 270px;
+    height: 25px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #3E2723;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+.BottomBar input:focus {
+    border-color: #FF4081;
+    box-shadow: 0 1px 1px #ff3053 inset, 0 0 8px #ff3871;
+    outline: 0 none;
+}
+
+/*.button {*/
+/*display: inline-block;*/
+/*padding: 17px 30px;*/
+/*position: relative;*/
+/*margin-left: 10px;*/
+/*margin-right: 15px;*/
+/*text-decoration: none;*/
+/*text-transform: uppercase;*/
+/*border-radius: 3px;*/
+/*-webkit-transition: 0.3s;*/
+/*-moz-transition: 0.3s;*/
+/*-ms-transition: 0.3s;*/
+/*-o-transition: 0.3s;*/
+/*transition: 0.3s;*/
+/*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);*/
+/*border: none;*/
+/*font-size: 15px;*/
+/*text-align: center;*/
+/*}*/
+
+/*.button:hover {*/
+/*box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);*/
+/*}*/
+
+/* Material style */
+button {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    padding: 15px 40px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+    background-color: #F44336;
+    outline: none;
+}
+
+/* Ripple magic */
+button {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #3E2723;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #3E2723;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #3E2723;
+}
