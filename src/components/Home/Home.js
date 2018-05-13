@@ -22,7 +22,7 @@ class Home extends Component {
                         <SVGAnimation className="hero-text" strokeWidth={0} strokeColor="#FFFFFF" fillColor="white"/>
                         <p className="hero-text hero-text-p">Sweets meant for your sweets</p>
                         <Link to="#bottom">
-                            <img src={"/downArrow.svg"} alt="Scroll Down" className="arrow-down" />
+                            <img src={"/downArrow.svg"} alt="Scroll Down" className="arrow-down is-visible"/>
                         </Link>
                     </div>
                 </div>

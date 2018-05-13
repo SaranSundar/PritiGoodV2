@@ -20,9 +20,9 @@ class NavBar extends Component {
                                     <i className="fa fa-birthday-cake logo" aria-hidden="true"></i>
                                 </li>
                             </Link>
-                            <Link to="/About">
-                                <li>ABOUT</li>
-                            </Link>
+                            {/*<Link to="/About">*/}
+                                {/*<li>ABOUT</li>*/}
+                            {/*</Link>*/}
                             <NavLink activeClassName={"selected"} exact={true} to="/Menu">
                                 <li>MENU</li>
                             </NavLink>

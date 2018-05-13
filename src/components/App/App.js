@@ -6,6 +6,7 @@ import NavBar from "../NavBar/NavBar";
 import Menu from "../Menu/Menu";
 import BottomBar from "../BottomBar/BottomBar";
 import Gallery from "../Gallery/Gallery";
+import Contact from "../Contact/Contact";
 
 class App extends Component {
     render() {
@@ -15,6 +16,7 @@ class App extends Component {
                 <Switch>
                     <Route path="/gallery" component={Gallery}/>
                     <Route path="/menu" component={Menu}/>
+                    <Route path="/contact" component={Contact}/>
                     <Route path="/" exact component={Home}/>
                     <Redirect to="/"/>
                 </Switch>

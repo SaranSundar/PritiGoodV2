@@ -47,7 +47,7 @@ class Menu extends Component {
                     </NavLink>
                 </ul>
                 <Switch>
-                    <Route path="/menu/specials" component={Specials}/>
+                    <Route path="/menu/specials" component={Desserts}/>
                     <Route path="/menu/cookies" component={Cookies}/>
                     <Route path="/menu/cupcakes" component={Cupcakes}/>
                     <Route path="/menu/cakepops" component={Cakepops}/>

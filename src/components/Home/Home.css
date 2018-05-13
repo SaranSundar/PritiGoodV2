@@ -8,6 +8,15 @@
     /*overflow-x: hidden;*/
 /*}*/
 
+.is-visible{
+    visibility: hidden;
+}
+
+@media (min-width: 992px) {
+    .is-visible {
+        visibility: visible;
+    }
+}
 .hero-image {
     width: 100%;
     height: calc(100vh - 75px);

@@ -1,12 +1,13 @@
 {
-  "main.css": "static/css/main.8e79490a.css",
-  "main.css.map": "static/css/main.8e79490a.css.map",
-  "main.js": "static/js/main.f63b7b4b.js",
-  "main.js.map": "static/js/main.f63b7b4b.js.map",
+  "main.css": "static/css/main.8d92e84a.css",
+  "main.css.map": "static/css/main.8d92e84a.css.map",
+  "main.js": "static/js/main.7ac8078d.js",
+  "main.js.map": "static/js/main.7ac8078d.js.map",
   "static/media/WhiteCake.jpg": "static/media/WhiteCake.fba53673.jpg",
   "static/media/cakepop.svg": "static/media/cakepop.359c85aa.svg",
   "static/media/cookie.svg": "static/media/cookie.b85f39e7.svg",
   "static/media/cupcake.svg": "static/media/cupcake.3a10c016.svg",
   "static/media/oreo.svg": "static/media/oreo.e9ffea1d.svg",
+  "static/media/phone.svg": "static/media/phone.9bdb058d.svg",
   "static/media/realbg.jpg": "static/media/realbg.aa8e42d8.jpg"
 }

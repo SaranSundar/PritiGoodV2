@@ -52,39 +52,71 @@ class Gallery extends Component {
         //This is the final partitions so minimum required sizes
         let partitionsFinal = [[1, 1], [1, 2], [2, 1], [1, 4], [4, 2], [2, 4], [4, 1], [4, 4], [2, 2], [1, 3], [3, 1], [2, 3], [3, 2], [3, 3], [3, 4], [4, 3]];
         //Creates grid and then prints it out
-        let numOfImages = 25;
-        let height = 8;
+        let numOfImages = 28;
+        let height = 9;
         let width = Math.floor(window.innerWidth / 100);
         let difference = window.innerWidth - (width * 100);
         console.log("WIDTH IS " + width);
-        let grid = Gallery.generateGrid(numOfImages, width, height, partitionsFinal);
-        grid.sort((o1, o2) => {
-            if (o1.box.y === o2.box.y) {
-                return o1.box.x - o2.box.x;
-            } else {
-                return o1.box.y - o2.box.y;
+        if (width > 6) {
+            let grid = Gallery.generateGrid(numOfImages, width, height, partitionsFinal);
+            for (let i = 0; i < 10; i++) {
+                let newGrid = Gallery.generateGrid(numOfImages, width, height, partitionsFinal);
+                if (newGrid.length > grid.length) {
+                    console.log("BETTER GRID");
+                    grid = newGrid;
+                }
             }
-        });
-        let nums = Array.apply(null, Array(numOfImages)).map(function (_, i) {
-            return i;
-        });
-        nums.shuffle();
-        let diff = grid.length - nums.length;
-        if (diff > 0) {
-            for (let i = 0; i < diff; i++) {
-                grid.pop();
+            // while(grid.length<numOfImages){
+            //     height += 1;
+            //     grid = Gallery.generateGrid(numOfImages, width, height, partitionsFinal);
+            // }
+            console.log("HEIGHT IS " + height);
+            grid.sort((o1, o2) => {
+                if (o1.box.y === o2.box.y) {
+                    return o1.box.x - o2.box.x;
+                } else {
+                    return o1.box.y - o2.box.y;
+                }
+            });
+            let nums = Array.apply(null, Array(numOfImages)).map(function (_, i) {
+                return i;
+            });
+            nums.shuffle();
+            let diff = grid.length - nums.length;
+            if (diff > 0) {
+                for (let i = 0; i < diff; i++) {
+                    grid.pop();
+                }
             }
-        }
-        let gridItems = grid.map((item, index) =>
-            <div className="item" onClick={this.handleClick}
-                 style={{gridColumn: "span " + item.box.getWidth(), gridRow: "span " + item.box.getHeight()}}>
-                <img src={"/img/pritigood500px/" + (nums[index] + 1) + ".jpg"}/>
-                <div className="item__overlay colorPink">
-                    <button>View →</button>
+            let gridItems = grid.map((item, index) =>
+                <div className="item" onClick={this.handleClick}
+                     style={{gridColumn: "span " + item.box.getWidth(), gridRow: "span " + item.box.getHeight()}}>
+                    <img src={"/img/pritigood500px/" + (nums[index] + 1) + ".jpg"}/>
+                    {item.box.getWidth() === 1 && item.box.getHeight() === 1 ?
+                        <div className="item__overlay colorPink">
+                            <button style={{fontSize: "15px"}}>View →</button>
+                        </div>
+                        : <div className="item__overlay colorPink">
+                            <button>View →</button>
+                        </div>}
+
                 </div>
-            </div>
-        );
-        this.setState({gridItems: gridItems, difference: difference});
+            );
+            this.setState({gridItems: gridItems, difference: difference, sWidth: width});
+        }
+        else {
+            difference = 10;
+            let nums = Array.apply(null, Array(numOfImages)).map(function (_, i) {
+                return i;
+            });
+            nums.shuffle();
+            let gridItems = nums.map((item) =>
+                <div className="item" onClick={this.handleClick} style={{padding: "10px"}}>
+                    <img src={"/img/pritigood500px/" + (item + 1) + ".jpg"}/>
+                </div>
+            );
+            this.setState({gridItems: gridItems, difference: difference, sWidth: width});
+        }
     }
 
     /***
@@ -193,12 +225,14 @@ class Gallery extends Component {
 
         return (
             <Fragment>
+                {this.state.sWidth > 6 &&
                 <div className="overlay" ref={(ref) => this.overlay = ref} onClick={this.close}>
                     <div className="overlay-inner">
-                        <button className="close" onClick={this.close}>× Close</button>
+                        {/*<button className="close" onClick={this.close}>× Close</button>*/}
                         <img/>
                     </div>
                 </div>
+                }
                 <div className="Gallery-DIV">
                     <div className="spacer"
                          style={{height: "800px", width: (this.state.difference / 2) + "px", color: "red"}}/>

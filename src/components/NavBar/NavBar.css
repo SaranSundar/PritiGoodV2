@@ -10,8 +10,8 @@
     padding: 0;
     height: var(--navBarHeight);
     /* make it look decent enough */
-    background: #232323;
-    color: #cdcdcd;
+    background: #FF4081;
+    color: #cda0b5;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     -webkit-touch-callout: none;
@@ -58,7 +58,7 @@
     margin-bottom: 5px;
     position: relative;
 
-    background: #cdcdcd;
+    background: white;
     border-radius: 3px;
 
     z-index: 1;
@@ -112,7 +112,7 @@
     width: 300px;
     margin: -100px 0 0 -50px;
     padding: 125px 50px 50px;
-    background: #ededed;
+    background: rgba(255, 146, 181, 0.93);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */

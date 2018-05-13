@@ -1,8 +1,8 @@
-.MenuPages{
+.MenuPages {
 
 }
 
-.MenuPages-container{
+.MenuPages-container {
     text-align: center;
     color: gray;
     font-family: 'EB Garamond', serif;
@@ -12,42 +12,63 @@
     font-size: 1.2em;
 }
 
-.MenuPages-container h1{
+.MenuPages-container h1 {
     color: gray;
 }
 
-.MenuPages-title{
+.MenuPages-title {
     font-size: 56px;
 }
 
-.MenuPages-column-wrapper{
+.MenuPages-column-wrapper {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     margin-bottom: 50px;
 }
 
-.MenuPages-column{
+.MenuPages-column {
     flex: 1;
     max-width: 12vw;
 }
 
-.MenuPages-arrangement-column-wrapper{
+.MenuPages-arrangement-column-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
 }
 
-.MenuPages-arrangement-column{
-    flex: 1;
+.MenuPages-arrangement-column {
+    flex: 0;
     max-width: 25vw;
     min-width: max-content;
 }
 
-.MenuPages-arrangement-image{
-    max-height: 100%;
-    max-width: 100%;
+@media only screen and (max-width: 992px) {
+
+    .MenuPages-column-wrapper{
+        display: block !important;
+        text-align: center;
+    }
+
+    .MenuPages-column{
+        text-align: center;
+        display: block;
+        flex: none;
+        max-width: 100%;
+    }
+
+    .MenuPages-arrangement-column {
+        flex: 1;
+        max-width: 25vw;
+        min-width: max-content;
+    }
 }
 
-.MenuPages-arrangements-title{
+.MenuPages-arrangement-image {
+    width: 100%;
+}
+
+.MenuPages-arrangements-title {
     margin-bottom: 50px !important;
 }
